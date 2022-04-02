@@ -4,7 +4,18 @@ import CartContext from "./cart-context";
 const cartReducer = (state, action) => {
   if (action.type === "ADD_ITEM") {
     //* Add item (Update number of items) :
-    const updatedItems = state.items.concat(action.item);
+    // const updatedItems = state.items.concat(action.item);
+    let updatedItems;
+    if (state.items.some((item) => item.id === action.item.id)) {
+      updatedItems = state.items.map((item) =>
+        item.id === action.item.id
+          ? { ...item, amount: item.amount + action.item.amount }
+          : item
+      );
+    } else {
+      updatedItems = [...state.items, action.item];
+    }
+
     //* Update the total amount :
     const newTotalAmount =
       state.totalAmount + action.item.price * action.item.amount;
