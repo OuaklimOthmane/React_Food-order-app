@@ -11,6 +11,14 @@
   padding: 0;
 }
 
+.MealsLoading {
+  text-align: center;
+  font-size: large;
+  font-weight: 700;
+  color: brown;
+  margin-top: 2rem;
+}
+
 @keyframes meals-appear {
   from {
     opacity: 0;
