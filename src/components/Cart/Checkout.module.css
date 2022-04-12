@@ -1,7 +1,13 @@
 .form {
+  margin: 0rem 0px;
+  height: 14rem;
+  /* overflow: auto; */
+}
+
+.controls {
   margin: 1rem 0;
-  height: 19rem;
-  overflow: auto;
+  height: 10.5rem;
+  overflow-y: scroll;
 }
 
 .control {
