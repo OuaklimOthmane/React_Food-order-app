@@ -58,7 +58,12 @@ const Checkout = (props) => {
 
     if (!formIsValid) return;
 
-    console.log(enteredName, enteredStreet, enteredPostalCode, enteredCity);
+    props.onOrder({
+      name: enteredName,
+      street: enteredStreet,
+      postalCode: enteredPostalCode,
+      city: enteredCity,
+    });
 
     //! Clear input fields :
     nameReset();
